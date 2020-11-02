@@ -1,0 +1,31 @@
+<app-menu-user></app-menu-user>
+
+<br>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th width="100px">
+                <button type="button" class="btn btn-primary" (click)="nuevo()">Nuevo</button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of listMovies">
+            <th>{{ movie.name }}</th>
+            <th>{{ movie.description }}</th>
+            <th>
+                <img src="{{URLConecction}}peliculas/uploads/img/{{ movie.id }}" width="50" height="50" alt="Imagen pelicula">
+            </th>
+            <th>
+                <div class="btn-group" role="group" aria-label="Button group">
+                    <button type="button" class="btn btn-warning" (click)="modificar(movie.id)">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="eliminar(movie.id)">Eliminar</button>
+                </div>
+            </th>
+        </tr>
+    </tbody>
+</table>

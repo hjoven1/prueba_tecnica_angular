@@ -1,0 +1,28 @@
+<app-menu-user></app-menu-user>
+<br>
+<div class="offset-md-4 col-md-4">
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="card-title">Movies</div>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formPeliculas" (submit)='crearPelicula()' enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input id="name" class="form-control" type="text" name="name" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input id="description" class="form-control" type="text" name="description" formControlName="description">
+                </div>
+                <div class="form-group">
+                    <label for="foto">Foto</label>
+                    <input id="foto" class="form-control" type="file" (change)="onFileSelect($event)" accept="image/png, image/jpeg" name="foto" formControlName="foto">
+                </div>
+                <div class="btn-group" role="group" aria-label="Button group">
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
